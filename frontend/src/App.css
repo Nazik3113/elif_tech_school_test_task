@@ -1,0 +1,16 @@
+.header-container {
+  padding: 20px 0;
+}
+
+.shops-container {
+  padding: 20px 0;
+}
+
+.brl {
+  border-right: 0.2rem solid #000;
+}
+
+.brmain {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
