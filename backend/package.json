@@ -1,0 +1,22 @@
+{
+  "name": "elif_tech_school_test_task_backend",
+  "version": "1.0.0",
+  "description": "Backend api's for elif tech school test task.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev_start": "nodemon index.js",
+    "start": "node index.js",
+    "seeds": "node ./mariadb/seeds/index.js"
+  },
+  "keywords": [],
+  "author": "Nazarii Spikhalskyi <nazarii.spikhalskyi@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mariadb": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
