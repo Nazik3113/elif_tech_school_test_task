@@ -3,7 +3,7 @@ import pool from "../mariadb/index.js";
 const showBySessionId = async (req, res) => {
     try {
         const session_id = req.params.id;
-        const getOrdersQuery = "select * from seper_secure_db.orders where session_id = ?;";
+        const getOrdersQuery = "select * from elif_tech_school_test_tack_db.orders where session_id = ?;";
         const getOrdersResult = await pool.query(getOrdersQuery, [session_id]);
 
         const ordersIds = getOrdersResult.reduce((ordersIdsArray, order) => {
@@ -19,10 +19,10 @@ const showBySessionId = async (req, res) => {
                 si.image, \
                 si.price, \
                 s.name as store_name \
-            from seper_secure_db.order_items oi \
-            join seper_secure_db.shops_items si \
+            from elif_tech_school_test_tack_db.order_items oi \
+            join elif_tech_school_test_tack_db.shops_items si \
                 on oi.shop_item_id = si.id \
-            join seper_secure_db.shops s \
+            join elif_tech_school_test_tack_db.shops s \
                 on oi.shop_id = s.id \
             where \
                 oi.order_id in (" + "?,".repeat(getOrdersResult.length).slice(0, -1) + ");";

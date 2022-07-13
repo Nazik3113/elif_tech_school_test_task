@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `seper_secure_db`.`orders` (
+CREATE TABLE IF NOT EXISTS `elif_tech_school_test_tack_db`.`orders` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `session_id` VARCHAR(36) NOT NULL,
   `name` VARCHAR(100) NOT NULL,

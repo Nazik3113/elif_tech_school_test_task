@@ -19,7 +19,7 @@ const create = async (req, res) => {
         const { session_id, name, email, phone, address, price, items } = req.body;
         const createOrderQuery = "\
             insert into \
-                seper_secure_db.orders(\
+                elif_tech_school_test_tack_db.orders(\
                     `session_id`, \
                     `name`, \
                     `email`, \
@@ -37,7 +37,7 @@ const create = async (req, res) => {
 
         const createOrderItemsQuery = "\
             insert into \
-                seper_secure_db.order_items(\
+                elif_tech_school_test_tack_db.order_items(\
                     `order_id`, \
                     `shop_id`, \
                     `shop_item_id`, \

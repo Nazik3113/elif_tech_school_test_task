@@ -1,4 +1,4 @@
-insert into `seper_secure_db`.`shops_items`(`shop_id`, `name`, `image`, `price`) values 
+insert into `elif_tech_school_test_tack_db`.`shops_items`(`shop_id`, `name`, `image`, `price`) values 
     (1, 'Ноутбук Acer Aspire 7 A715-42G-R0VS (NH.QBFEU.00A) Charcoal Black', '29d1e491-a554-4763-a106-9601098a937d.jpg', 27999), 
     (1, 'Ноутбук Apple MacBook Air 13" M1 256GB 2020 (Z12A0008Q) Gold', '440164fb-8e3f-4714-b448-c5280dd7afa1.jpg', 47999), 
     (1, 'Ноутбук HP Pavilion Gaming 15-ec2024ua (5A0U9EA) Shadow Black', '622bf63f-86c3-4dfc-aba9-dc08ce18b98c.jpg', 42999), 
