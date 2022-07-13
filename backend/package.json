@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev_start": "nodemon index.js",
-    "start": "npm run seeds && node index.js",
+    "start": "node ./mariadb/seeds/index.js && node index.js",
     "seeds": "node ./mariadb/seeds/index.js"
   },
   "keywords": [],
