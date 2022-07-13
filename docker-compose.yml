@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  frontend: 
+    build: 
+      context: .
+      dockerfile: Dockerfile.nignx_frontend
+    ports:
+      - 8088:80   
+    depends_on:
+      - backend  
+    links:
+      - backend  
+  backend: 
+    build:
+      context: .
+      dockerfile: Dockerfile.node_backend
+    environment:
+      MARIADB_HOST: database
+      MARIADB_USER: elif_tech_school_test_tack_user
+      MARIADB_PASSWORD: elif_tech_school_test_tack_password
+      MARIADB_DB_NAME: elif_tech_school_test_tack_db
+    depends_on:
+      - database
+  database:
+    image: mariadb:10.7.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: elif_tech_school_test_tack_root_password
+      MYSQL_PASSWORD: elif_tech_school_test_tack_password 
+      MYSQL_USER: elif_tech_school_test_tack_user 
+      MYSQL_DATABASE: elif_tech_school_test_tack_db    

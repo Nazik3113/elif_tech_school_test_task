@@ -32,5 +32,5 @@ app.use("/orders", ordersRoutes);
 app.use("/orders-history", ordersHistoryRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port: https://localhost:${PORT}`);
+    console.log(`Server is running on port: http://localhost:8088`);
 });
