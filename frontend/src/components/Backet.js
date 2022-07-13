@@ -57,7 +57,7 @@ const Backet = () => {
             return false;
         }
 
-        const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
 
         if (phone.length > 0 && !phone.match(phoneRegex)) {
             dispatch({type: "ERROR/SHOW_ERROR", data: "Телефон не валідний."});

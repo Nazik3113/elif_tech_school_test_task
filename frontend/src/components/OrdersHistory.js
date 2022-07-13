@@ -18,7 +18,7 @@ const OrdersHistory = () => {
             .then((res) => {
                 dispatch({type: "ORDERS_HISTORY/PUT_ORDERS_HISTORY", data: res.data});
             });
-    }, []);
+    }, [dispatch]);
 
     return (
         <Form style={{display: "flex", flexDirection: "column"}}>
