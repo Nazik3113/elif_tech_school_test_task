@@ -32,5 +32,5 @@ app.use("/orders", ordersRoutes);
 app.use("/orders-history", ordersHistoryRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port: http://${process.env.REACT_APP_API_HOST}:8088`);
+    console.log(`Server is running on port: http://localhost:${PORT}`);
 });

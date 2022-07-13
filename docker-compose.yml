@@ -5,8 +5,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.nignx_frontend
-      args:
-        REACT_APP_API_HOST: localhost
     ports:
       - 8088:80   
     depends_on:
