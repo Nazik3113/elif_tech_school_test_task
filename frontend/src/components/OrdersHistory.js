@@ -31,7 +31,6 @@ const OrdersHistory = () => {
                                     <Card.Body style={{display: "flex", justifyContent: "space-between", flexDirection: "initial"}}>
                                         <Col xs={8} className="cards" style={{display: "flex", overflowX: "scroll"}}>
                                             {ordersHistoryItem.items.map((orderHistoryItemsItem) => {
-                                                console.log(orderHistoryItemsItem);
                                                 return (
                                                     <Card key={orderHistoryItemsItem.id} style={{display: "flex", justifyContent: "space-between", flexDirection: "initial", height: "100%", maxWidth: "800px", minWidth: "700px", marginRight: "20px"}}>
                                                         <Col xs={6} className="cards" style={{display: "flex", padding: "10px"}}>

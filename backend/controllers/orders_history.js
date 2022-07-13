@@ -28,7 +28,6 @@ const showBySessionId = async (req, res) => {
                 oi.order_id in (" + "?,".repeat(getOrdersResult.length).slice(0, -1) + ");";
 
         const getOrdersItemsResult = await pool.query(getOrdersItemsQuery, ordersIds);
-        console.log(getOrdersItemsResult);
 
         getOrdersResult.map((order) => {
             order.items = getOrdersItemsResult.filter((orders_item) => {
