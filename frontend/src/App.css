@@ -4,7 +4,8 @@
 }
 
 .shops-container,
-.shops-items-container {
+.shops-items-container,
+.orders-history-container {
   padding: 20px 0;
 }
 
@@ -32,6 +33,17 @@
   top: 150px;
   right: 0;
   background-color: #FE4A49;
+  color: #fff;
+  padding: 20px 10px 10px 40px;
+  max-width: 300px;
+  transition: all 1s;
+}
+
+.notification-container {
+  position: absolute;
+  top: 250px;
+  right: 0;
+  background-color: #335145;
   color: #fff;
   padding: 20px 10px 10px 40px;
   max-width: 300px;

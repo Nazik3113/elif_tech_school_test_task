@@ -7,10 +7,10 @@ CREATE TABLE IF NOT EXISTS `seper_secure_db`.`orders` (
   `address` VARCHAR(500) NOT NULL,
   `price` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-  INDEX `phone_idx` (`phone` ASC) VISIBLE,
-  INDEX `email_idx` (`email` ASC) VISIBLE,
-  INDEX `session_id_idx` (`session_id` ASC) VISIBLE
+  UNIQUE INDEX `orders_id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `orders_phone_idx` (`phone` ASC) VISIBLE,
+  INDEX `orders_email_idx` (`email` ASC) VISIBLE,
+  INDEX `orders_session_id_idx` (`session_id` ASC) VISIBLE
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4

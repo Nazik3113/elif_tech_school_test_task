@@ -8,6 +8,11 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+    if (action.type === "BACKET/DROP_BACKET") {
+        localStorage.setItem("backet", JSON.stringify(initialState));
+        return initialState;
+    } 
+
     if (action.type === "BACKET/ADD_ITEM_TO_BACKET") {
         const newState = {...state, items: state.items.concat([action.data])}; 
         localStorage.setItem("backet", JSON.stringify(newState));

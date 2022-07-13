@@ -8,6 +8,8 @@ import Row from 'react-bootstrap/Row';
 import Shops from './components/Shops';
 import ShopItems from './components/ShopItems';
 import Error from './components/Error';
+import Notification from "./components/Notification";
+import OrdersHistory from './components/OrdersHistory';
 import Backet from './components/Backet';
 import { Provider } from "react-redux";
 import store from './store/index';
@@ -38,10 +40,11 @@ function App() {
                 <ShopItems key="shopsItems" />
               ]} />
               <Route path="/backet" element={<Backet />} />
-              <Route path="/orders-history" element={<h2>Orders</h2>} />
+              <Route path="/orders-history" element={<OrdersHistory />} />
             </Routes>
           </Row>
           <Error />
+          <Notification />
         </div>
       </Provider>
     </Router>

@@ -38,7 +38,8 @@ const ShopItems = () => {
         if (itemDublicates.length > 0) {
             return dispatch({type: "ERROR/SHOW_ERROR", data: "Цей продукт уже знаходиться в корзині!"});
         }
-        return dispatch({type: "BACKET/ADD_ITEM_TO_BACKET", data: {...shopItem, amount: 1}});
+        dispatch({type: "BACKET/ADD_ITEM_TO_BACKET", data: {...shopItem, amount: 1}});
+        return dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Продукт успішно додано до корзини."});
     }
 
     return (

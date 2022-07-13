@@ -2,7 +2,6 @@ import pool from "../mariadb/index.js";
 
 const show = async (req, res) => {
     try {
-        res.set('Access-Control-Allow-Origin', '*');
         const id = req.params.id;
         const sqlQuery = "select * from seper_secure_db.shops_items where shop_id = ?;";
         const rows = await pool.query(sqlQuery, [id]);

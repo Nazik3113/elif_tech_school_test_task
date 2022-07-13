@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from "react-redux";
 import Card from 'react-bootstrap/Card';
+import { create as createOrderRequest } from "../requests/orders";
+import Cookies from 'universal-cookie';
 
 const Backet = () => {
     const dispatch = useDispatch();
@@ -20,10 +22,19 @@ const Backet = () => {
 
     function createOrder(event) {
         event.preventDefault();
+        const cookies = new Cookies();
         const validation = validateForm();
 
         if (validation === true) {
-
+            createOrderRequest(cookies.get('sessionId'), name, email, phone, address, sum, items)
+                .then((res) => {
+                    if (res.status === 200) {
+                        dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Замовлення успішно створено, наші менеджери обов'язково з вами зв'яжуться."});
+                        dispatch({type: "BACKET/DROP_BACKET"});
+                    } else {
+                        dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Не вдалося створити замовлення, спробуйте ще раз за кілька хвилин."});
+                    }
+                });
         }
     }
 
@@ -63,6 +74,7 @@ const Backet = () => {
 
     function removeItem(id) {
         dispatch({type: "BACKET/REMOVE_ITEM_FROM_BACKET", data: id});
+        dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Продукт успішно видалено з корзини."});
     }
 
     function updateName(name) {
@@ -121,7 +133,7 @@ const Backet = () => {
                     </Form.Group>
                     
                 </Col>
-                <Col xs={5} className="backet-items-container brmain" style={{width: "49%", textAlign: "center", overflowY: 'scroll'}}>
+                <Col xs={5} className="backet-items-container brmain" style={{width: "49%", textAlign: "center", overflowY: 'scroll', maxHeight: "82vh"}}>
                     {items.length > 0 
                         ? items.map((backetItem) => {
                             return (
