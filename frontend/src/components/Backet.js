@@ -29,7 +29,7 @@ const Backet = () => {
             createOrderRequest(cookies.get('sessionId'), name, email, phone, address, sum, items)
                 .then((res) => {
                     if (res.status === 200) {
-                        dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Замовлення успішно створено, наші менеджери обов'язково з вами зв'яжуться."});
+                        dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Замовлення успішно створене, очікуйте на доставку."});
                         dispatch({type: "BACKET/DROP_BACKET"});
                     } else {
                         dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Не вдалося створити замовлення, спробуйте ще раз за кілька хвилин."});
