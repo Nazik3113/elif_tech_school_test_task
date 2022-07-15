@@ -19,7 +19,7 @@ const OrdersHistory = () => {
                 dispatch({type: "ORDERS_HISTORY/PUT_ORDERS_HISTORY", data: res.data});
             })
             .catch((error) => {
-                return dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка через декілька хвилин."});
+                dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка ще раз за кілька хвилин."});
             });
     }, [dispatch]);
 

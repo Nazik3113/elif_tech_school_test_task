@@ -18,7 +18,7 @@ const ShopItems = () => {
                 dispatch({type: "SHOPS_ITEMS/PUT_SHOP_ITEMS", data: res.data});
             })
             .catch((error) => {
-                return dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка через декілька хвилин."});
+                dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка ще раз за кілька хвилин."});
             });
     }, [dispatch, activeShopId]);
 

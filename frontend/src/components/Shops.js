@@ -29,7 +29,7 @@ const Shops = () => {
                 }
             })
             .catch((error) => {
-                return dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка через декілька хвилин."});
+                dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка ще раз за кілька хвилин."});
             });
     }, [dispatch, items]);
 
