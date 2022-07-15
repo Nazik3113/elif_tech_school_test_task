@@ -27,6 +27,9 @@ const Shops = () => {
                     dispatch({type: "SHOPS/PUT_SHOPS", data: {shops: res.data, activeShopId: res.data[0].id}});
                     dispatch({type: "SHOPS/UNHIDE_SHOPS"});
                 }
+            })
+            .catch((error) => {
+                return dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка через декілька хвилин."});
             });
     }, [dispatch, items]);
 

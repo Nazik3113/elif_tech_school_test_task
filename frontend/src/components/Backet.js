@@ -34,6 +34,9 @@ const Backet = () => {
                     } else {
                         dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Не вдалося створити замовлення, спробуйте ще раз за кілька хвилин."});
                     }
+                })
+                .catch((error) => {
+                    dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Не вдалося створити замовлення, спробуйте ще раз за кілька хвилин."});
                 });
         }
     }

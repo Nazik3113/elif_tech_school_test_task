@@ -6,6 +6,10 @@ const showBySessionId = async (req, res) => {
         const getOrdersQuery = "select * from elif_tech_school_test_tack_db.orders where session_id = ?;";
         const getOrdersResult = await pool.query(getOrdersQuery, [session_id]);
 
+        if (getOrdersResult.length === 0) {
+            return res.status(200).json({});   
+        }
+
         const ordersIds = getOrdersResult.reduce((ordersIdsArray, order) => {
             return [...ordersIdsArray, order.id];
         }, []);
