@@ -32,11 +32,11 @@ const Backet = () => {
                         dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Замовлення успішно створене, очікуйте на доставку."});
                         dispatch({type: "BACKET/DROP_BACKET"});
                     } else {
-                        dispatch({type: "NOTIFICATION/SHOW_NOTIFICATION", data: "Не вдалося створити замовлення, спробуйте ще раз за кілька хвилин."});
+                        dispatch({type: "ERROR/SHOW_ERROR", data: "Не вдалося створити замовлення, спробуйте ще раз за кілька хвилин."});
                     }
                 })
                 .catch((error) => {
-                    dispatch({type: "ERROR/SHOW_ERROR", data: "Помилка API, спробуйте будь ласка ще раз за кілька хвилин."});
+                    dispatch({type: "ERROR/SHOW_ERROR", data: "Не вдалося створити замовлення, спробуйте ще раз за кілька хвилин."});
                 });
         }
     }
